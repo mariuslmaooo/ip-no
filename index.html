@@ -1,0 +1,35 @@
+<html>
+
+<head>
+
+<title>404 Not Found</title>
+
+</head>
+
+<body>
+
+<?php
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+$data= "IP: " .$ip . "n";
+
+$grab = "ip.txt";
+
+@chmod($grab, 0777);
+
+$f = fopen($grab, 'a');
+
+fwrite($f, $data);
+
+fclose($f);
+
+?>
+
+Not Found
+
+The requested URL was not found on this server.
+
+</body>
+
+</html>
